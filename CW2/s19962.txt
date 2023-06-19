@@ -1,0 +1,6 @@
+1.  db.cw1.aggregate({$match:{}},{"$count":"count of People"})
+2.  db.cw1.aggregate({$match:{"nationality":"China"}},{"$count":"count of People from China"})
+3. db.cw1.aggregate({$match:{}},{"$group":{_id:"$job"}},{"$count": "job count" })
+4. db.cw1.aggregate({$match:{}},{"$group":{_id:"$sex","average weight":{"$avg":{"$toDouble":"$weight"}} }})
+
+6.
