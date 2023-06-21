@@ -1,0 +1,25 @@
+1.  MATCH (n:town {name:"Darjeeling"}),(m:peak {name:"Sandakphu"})
+    WITH n,m
+    MATCH path = ShortestPath((n)-[*..4]-(m))
+    RETURN path
+2.  MATCH (n:town {name:"Darjeeling"}),(m:peak {name:"Sandakphu"})
+    WITH n,m
+    MATCH path = ShortestPath((n)-[*..4]-(m))
+    WHERE all (r in relationships(path) WHERE r.winter="true")
+    RETURN path
+3.  MATCH (n:town {name:"Darjeeling"}),(m:peak {name:"Sandakphu"})
+    WITH n,m
+    MATCH p = (n)-[*..4]-(m)
+    RETURN p
+    ORDER BY length(p) asc
+4.  MATCH (n:town {name:"Darjeeling"})
+    WITH n
+    MATCH p = (n)-[:twowheeler]->(m)
+    WHERE all (r in relationships(p) WHERE r.summer="true")
+    RETURN m
+5.  Match (a:Airport)-[r]-()
+    Return a ,count(r)
+    oRDER bY count(r)
+6.  Match (a:Airport {name:"LAX"})-[*..4]-(a2:Airport)
+    return a2
+7.

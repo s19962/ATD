@@ -1,0 +1,25 @@
+1
+    a) SET 19962 "Hello World"
+    b) SETRANGE 19962 6 "Redis"
+    c) GET 19962
+    d) DEL 19962
+2
+    a) LPUSH lista "Projektowanie i informatyzacja procesów Technologicznych" "Architektura Trwałości danych" "Wytwarzanie,integracja  i testowanie systemów rozproszonych"
+    b) LPUSH lista "Poczętek Listy"
+    c) RPUSH lista "Koniec Listy"
+    d) LRANGE lista 0 2
+3
+    a) SADD zbior "Szybcy i Wsciekli 10" "Spider-Man: Acros the Spiderverse" "Asteroid City" "John Wick 4"
+    b) SISMEMBER zbior "Szybcy i Wsciekli 10"
+    c) SCARD zbior
+    d) SPOP zbior
+4
+    a) HSET hash "Avatar: The Way Of Water" "Avatar: Istota Wody" "A Man Called Otto" "Mezczyzna Imieniem Otto" "The Whale" "Wieloryb" "Everything, Everywhere All at Once" "Wszystko, Wszedzie Naraz"
+    b) HSET hash "Triangle Of Sadness" "W Trojkacie"
+    c) HEXISTS hash "Avatar: The Way Of Water"
+    d) HGETALL hash
+5
+    a) ZADD zset 80 "Dune" 58 "Old" 73 "No time to die" 72 "Don't look up"
+    b) ZREVRANGE zset 0 3 WITHSCORES
+    c) ZRANGEBYSCORE zset 70 80 WITHSCORES
+    d) ZRANK zset "Dune"

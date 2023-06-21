@@ -1,0 +1,8 @@
+1 GEOADD Polska 52.2391293 20.9951417 "Warszawa"  52.4172172 16.8819358 "Poznan" 53.1295158 18.0146103 "Lublin" 53.1491117 16.7337267 "Pila"  53.4334532 14.5321592 "Szczecin" 54.1720247 17.4906000 "Bytow" 50.1686700 20.5755200 "Koszyce" 53.1573506 23.1965496 "Bialystok" 54.3886550 18.6230837 "Gdansk"  54.2048722 16.1826681 "Koszalin"
+2 GEORADIUSBYMEMBER Polska "Warszawa" 200 km
+3   GEODIST Polska "Szczecin" "Koszalin" km
+    GEOSEARCH Polska FROMMEMBER "Szczecin" BYBOX 200 200 km
+4   GEODIST Polska "Warszawa" "Koszalin" km
+5   GEOPOS Polska "Koszalin"
+6   GEOHASH Polska Warszawa Koszalin Pila
+7   GEOSEARCHSTORE PomorzeZachodnie Polska FROMMEMBER "Szczecin" BYBOX 200 200 km
